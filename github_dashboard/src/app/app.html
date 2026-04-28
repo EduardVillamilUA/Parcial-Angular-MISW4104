@@ -1,11 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm mb-4">
+  <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">GitHub Admin</a>
+      <div class="navbar-nav">
+          <a class="nav-link" routerLink="/users" routerLinkActive="active">Usuarios</a>
+          <a class="nav-link" routerLink="/repositories" routerLinkActive="active">Repositorios</a>
+      </div>
+  </div>
+</nav>
 <div class="container-fluid">
    <div class="row">
     <div class="col-md-4">
         <div class="card shadow-sm border-0">
             <div class="card-header bg-white border-0 py-3">
-                <h5 class="mb-0">Lista de Usuarios</h5>
                 <div class="list-group list-group-flush">
-                  <app-users-list></app-users-list>
+                  <router-outlet></router-outlet>
                 </div>
             </div>
           </div>

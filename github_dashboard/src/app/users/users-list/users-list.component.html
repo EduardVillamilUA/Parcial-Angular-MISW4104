@@ -1,3 +1,6 @@
+<div class="card-header bg-white border-0 py-3">
+  <h5 class="mb-0">Lista de Usuarios</h5>
+</div>
 @for (user of (users$ | async); track user.id) {
   <div class="list-group-item sidebar-item py-3">
     <div class="d-flex align-items-center">

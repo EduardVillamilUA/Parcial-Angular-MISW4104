@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 
 import { UsersModule } from './users/users.module';
+import { RepositoriesModule } from './repositories/repositories.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { UsersModule } from './users/users.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UsersModule
+    UsersModule,
+    RepositoriesModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
