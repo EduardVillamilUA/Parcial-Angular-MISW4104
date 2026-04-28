@@ -1,0 +1,19 @@
+export class Repositorie {
+    "id": number;
+    "name": string;
+    "description": string;
+    "language": string;
+    "stars": number;
+    "createdAt": string;
+    "ownerId": number
+
+    public constructor(id: number, name: string, description: string, language: string, stars: number, createdAt: string, ownerId: number) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.language = language;
+        this.stars = stars;
+        this.createdAt = createdAt;
+        this.ownerId = ownerId;
+    }
+}
