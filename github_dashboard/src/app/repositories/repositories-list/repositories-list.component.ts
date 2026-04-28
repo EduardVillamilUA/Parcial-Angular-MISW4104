@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Repositorie } from '../repositorie';
+import { Repository } from '../repository';
 import { RepositoriesListService } from './repositories-list.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { RepositoriesListService } from './repositories-list.service';
 })
 export class RepositoriesListComponent implements OnInit {
 
-  repositories$!: Observable<Repositorie[]>;
+  repositories$!: Observable<Repository[]>;
 
   constructor(private repositoriesListService: RepositoriesListService) { }
 

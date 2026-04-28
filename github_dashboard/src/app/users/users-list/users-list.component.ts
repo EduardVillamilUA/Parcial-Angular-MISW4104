@@ -13,11 +13,18 @@ import { Observable } from 'rxjs';
 export class UsersListComponent implements OnInit {
 
   users$!: Observable<User[]>;
+  selected: Boolean = false;
+  selectedUser!: User;
 
   constructor(private usersListService: UsersListService) { }
 
   ngOnInit() {
     this.users$ = this.usersListService.getUsers();
+  }
+
+  onSelectedUser(user: User): void {
+    this.selectedUser = user;
+    this.selected = true;
   }
 
 }

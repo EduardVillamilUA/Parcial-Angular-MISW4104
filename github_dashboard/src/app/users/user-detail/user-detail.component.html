@@ -1,0 +1,35 @@
+<div class="card shadow-sm border-0 detail-panel">
+  <div class="card-body p-4">
+    <div class="d-flex align-items-center mb-4">
+      <img [src]="userDetail.avatarUrl" class="rounded-circle me-3" width="80" alt="avatar">
+
+      <div>
+        <h2 class="mb-0">{{userDetail.name}}</h2>
+        <h5 class="text-muted mb-2">@{{userDetail.username}}</h5>
+
+        <span class="badge bg-primary">{{userDetail.role}}</span>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label class="text-muted small text-uppercase">Email</label>
+        <p class="fw-medium">{{userDetail.email}}</p>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label class="text-muted small text-uppercase">Ubicación</label>
+        <p class="fw-medium">{{userDetail.location}}</p>
+      </div>
+      <div class="col-12">
+        <label class="text-muted small text-uppercase">Repositorios Asociados</label>
+        <div class="d-flex gap-2 mt-2">
+          @for (repositorie of userDetail.repoIds; track repositorie) {
+          <span class="badge bg-secondary">{{repositorie}}</span>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
