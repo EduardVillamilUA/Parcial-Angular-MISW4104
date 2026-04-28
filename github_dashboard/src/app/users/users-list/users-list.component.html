@@ -1,0 +1,21 @@
+@for (user of (users$ | async); track user.id) {
+  <div class="list-group-item sidebar-item py-3">
+    <div class="d-flex align-items-center">
+      <img src={{user.avatarUrl}} class="rounded-circle me-3" width="40" alt="avatar">
+      <div>
+        <h6 class="mb-0">{{user.name}}</h6>
+        <small class="text-muted">{{user.role}} • {{user.username}}</small>
+      </div>
+    </div>
+  </div>
+}
+@empty {
+  <div class="list-group-item sidebar-item py-3">
+    <div class="d-flex align-items-center">
+      <div>
+        <h6 class="mb-0">Error en la consulta de usuarios.</h6>
+        <small class="text-muted">Por favor, inténtelo de nuevo más tarde.</small>
+      </div>
+    </div>
+  </div>
+}
