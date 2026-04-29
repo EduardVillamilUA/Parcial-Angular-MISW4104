@@ -1,0 +1,33 @@
+<div class="card shadow-sm border-0 detail-panel">
+    <div class="card-body p-4">
+        <div class="mb-4">
+            <h2 class="mb-1">{{(repositoryDetail$ | async)?.name}}</h2>
+            <span class="badge bg-info text-dark">ID: #{{(repositoryDetail$ | async)?.id}}</span>
+        </div>
+
+        <p class="text-secondary fs-5">
+            {{(repositoryDetail$ | async)?.description}}
+        </p>
+
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <label class="text-muted small text-uppercase">Lenguaje</label>
+                <p class="fw-bold">{{(repositoryDetail$ | async)?.language}}</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="text-muted small text-uppercase">Estrellas</label>
+                <p class="fw-bold">{{(repositoryDetail$ | async)?.stars}}</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="text-muted small text-uppercase">Creado el</label>
+                <p class="fw-bold">{{(repositoryDetail$ | async)?.createdAt}}</p>
+            </div>
+            <div class="col-md-12">
+                <label class="text-muted small text-uppercase">ID del Dueño (Owner ID)</label>
+                <div class="p-2 bg-light rounded border">
+                    <code>{{(repositoryDetail$ | async)?.ownerId}}</code>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

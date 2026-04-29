@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RepositoriesListComponent } from './repositories-list/repositories-list.component';
+import { RepositoryDetailComponent } from './repository-detail/repository-detail.component';
 
 const routes: Routes = [
-  { path: '', component: RepositoriesListComponent},
+  { path: '',
+    component: RepositoriesListComponent,
+    children: [
+      { path: ':id', component: RepositoryDetailComponent } // El hijo (detalle)
+    ]
+  },
 ];
 
 @NgModule({

@@ -1,1 +1,13 @@
 node_modules/
+
+# Angular build and cache
+/.angular/
+/dist/
+
+# IDEs and Editors
+/.vscode/
+/.idea/
+
+# System Files and Logs
+*.log
+.DS_Store

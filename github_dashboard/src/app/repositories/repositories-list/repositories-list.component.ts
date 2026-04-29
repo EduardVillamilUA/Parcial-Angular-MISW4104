@@ -17,7 +17,6 @@ export class RepositoriesListComponent implements OnInit {
 
   ngOnInit() {
     this.repositories$ = this.repositoriesListService.getRepositories();
-    console.log(this.repositories$);
   }
 
 }

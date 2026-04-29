@@ -1,6 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
 body {
     background-color: #f8f9fa;
+    padding-top: 75px;
 }
 
 .sidebar-item {
@@ -12,4 +12,24 @@ body {
 .sidebar-item:hover {
     background-color: #e9ecef;
     border-left-color: #0d6efd;
+}
+
+.active-item {
+    background-color: #e9ecef;
+    border-left-color: #0d6efd;
+}
+
+.detail-panel {
+    position: sticky;
+    top: 20px;
+}
+
+.sticky-detail {
+    position: sticky;
+    /* Importante: el valor de 'top' debe ser igual o mayor 
+       al padding-top que le pusiste al body por la navbar fija */
+    top: 85px; 
+    /* Altura máxima para que el detalle tenga su propio scroll si es muy largo */
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
 }

@@ -7,12 +7,22 @@
             </div>
             <div class="list-group list-group-flush">
                @for (user of (users$ | async); track user.id) {
-                 <div class="list-group-item sidebar-item py-3" (click)="onSelectedUser(user)" style="cursor: pointer;">
+                 <div class="list-group-item sidebar-item py-3" [class.active-item]="selected && user.id === selectedUser.id" (click)="onSelectedUser(user)" style="cursor: pointer;">
                    <div class="d-flex align-items-center">
                      <img [src]="user.avatarUrl" class="rounded-circle me-3" width="40" alt="avatar">
                      <div>
                        <h6 class="mb-0">{{user.name}}</h6>
                        <small class="text-muted">{{user.role}} • {{user.username}}</small>
+                     </div>
+                   </div>
+                 </div>
+               }
+               @empty {
+                  <div class="list-group-item py-3">
+                   <div class="d-flex align-items-center">
+                     <div>
+                       <h6 class="mb-0">Error en la consulta de usuarios.</h6>
+                       <small class="text-muted">Por favor, inténtelo de nuevo más tarde.</small>
                      </div>
                    </div>
                  </div>
@@ -23,7 +33,9 @@
 
       <div class="col-md-8">
          @if (selected) {
-            <app-user-detail [userDetail]="selectedUser"></app-user-detail>
+            <div class="sticky-detail">
+               <app-user-detail [userDetail]="selectedUser"></app-user-detail>
+            </div>
          } @else {
             <div class="text-center mt-5 text-muted">
                <p>Selecciona un usuario para ver su detalle</p>
